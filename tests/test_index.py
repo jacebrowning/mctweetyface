@@ -7,8 +7,8 @@ def describe_index():
 
     def describe_GET():
 
-        def it_returns_random_name(client):
-            response = client.get("/")
+        def it_returns_name(client):
+            response = client.get("/?update=true")
 
             expect(response.status_code) == 200
             expect(response.text).contains("face")

@@ -15,6 +15,7 @@ def index():
     """Return a random name."""
     name = models.get_random_name()
 
-    utils.tweet(name)
+    if bottle.request.query.get('update'):
+        utils.tweet(name)
 
     return name
