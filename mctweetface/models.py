@@ -17,5 +17,9 @@ def get_random_noun():
 
 def get_random_name():
     """Generate a name from a random noun."""
-    noun = get_random_noun()
+    noun = None
+
+    while not noun or noun.endswith('y'):
+        noun = get_random_noun()
+
     return "{0}y Mc{0}face".format(noun.capitalize())
