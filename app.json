@@ -1,0 +1,6 @@
+{
+  "name": "mctweetface",
+  "addons": [
+    "papertrail"
+  ]
+}

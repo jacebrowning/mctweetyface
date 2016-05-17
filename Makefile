@@ -67,7 +67,7 @@ PYTEST := $(BIN_)py.test
 COVERAGE := $(BIN_)coverage
 COVERAGE_SPACE := $(BIN_)coverage.space
 SNIFFER := $(BIN_)sniffer
-HONCHO := PYTHONPATH=$(PWD) $(ACTIVATE) && $(BIN_)honcho
+HONCHO := $(ACTIVATE) && $(BIN_)honcho
 
 # Flags for PHONY targets
 INSTALLED_FLAG := $(ENV)/.installed
@@ -92,6 +92,23 @@ ci: check test tests
 watch: depends .clean-test
 	@ rm -rf $(FAILED_FLAG)
 	$(SNIFFER)
+
+# Server Targets ###############################################################
+
+STATUS_PORT ?= 4000
+
+.PHONY: run
+run: depends
+	status=3; while [ $$status -eq 3 ]; do PORT=$(STATUS_PORT) $(HONCHO) start; status=$$?; done
+
+.PHONY: run-debug
+run-debug: depends
+	$(HONCHO) run $(PYTHON) run.py
+
+.PHONY: launch
+launch: depends
+	eval "sleep 3; open http://localhost:$(STATUS_PORT)" &
+	$(MAKE) run
 
 # Development Installation #####################################################
 
@@ -139,7 +156,7 @@ endif
 # Documentation ################################################################
 
 .PHONY: doc
-doc: readme verify-readme uml apidocs mkdocs
+doc: readme verify-readme uml
 
 .PHONY: doc-live
 doc-live: doc

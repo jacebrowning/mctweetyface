@@ -1,2 +1,9 @@
+# Application
 bottle == 0.12.9
 tweepy == 3.5.0
+
+# Testing
+webtest == 2.0.20
+
+# Deployment
+gunicorn == 19.4.5
