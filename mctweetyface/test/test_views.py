@@ -12,6 +12,6 @@ def describe_index():
         expect(type(views.index())) == str
 
     def it_returns_random_results():
-        bottle.request.query['update'] = False
+        bottle.request.query['update'] = False  # pylint: disable=unsubscriptable-object
 
         expect(views.index()) != views.index()
