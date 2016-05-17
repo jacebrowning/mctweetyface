@@ -9,3 +9,6 @@ def describe_index():
 
     def it_returns_a_string():
         expect(type(views.index())) == str
+
+    def it_returns_random_results():
+        expect(views.index()) != views.index()
