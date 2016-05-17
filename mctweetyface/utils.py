@@ -17,9 +17,14 @@ auth.set_access_token(
 api = tweepy.API(auth)
 
 
-def tweet(message):
+def tweet(message, token=None):
     """Post a message on Twitter using the loaded credentials."""
-    try:
-        api.update_status(status=message)
-    except tweepy.error.TweepError as exception:
-        log.warning(exception)
+    if not auth.access_token:
+        log.warning("Tweeting disabled")
+        return
+
+    if token != auth.access_token:
+        log.error("Invalid access token")
+        return
+
+    api.update_status(status=message)

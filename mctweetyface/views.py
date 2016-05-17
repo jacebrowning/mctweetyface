@@ -16,7 +16,6 @@ def index():
     target = bottle.request.query.get('name')
     name = models.get_name(target)
 
-    if bottle.request.query.get('update'):
-        utils.tweet(name)
+    utils.tweet(name, token=bottle.request.headers.get('Authorization'))
 
     return name
