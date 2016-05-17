@@ -19,7 +19,15 @@ def get_random_name():
     """Generate a name from a random noun."""
     noun = None
 
-    while not noun or noun.endswith('y'):
+    while any(_rejected(noun)):
         noun = get_random_noun()
 
     return "{0}y Mc{0}face".format(noun.capitalize())
+
+
+def _rejected(noun):
+    yield not noun
+    yield noun.endswith('y')
+    yield ' ' in noun
+    yield '-' in noun
+    yield len(noun) > 8
