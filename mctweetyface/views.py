@@ -2,7 +2,8 @@ import logging
 
 import bottle
 
-from . import models
+from . import models, utils
+
 
 app = bottle.app()
 
@@ -12,4 +13,8 @@ log = logging.getLogger(__name__)
 @bottle.get("/")
 def index():
     """Return a random name."""
-    return models.get_random_name()
+    name = models.get_random_name()
+
+    utils.tweet(name)
+
+    return name
