@@ -1,1 +1,1 @@
-"""Integration tests for the `mctweetface` package."""
+"""Integration tests for the `mctweetyface` package."""

@@ -1,6 +1,6 @@
 # Project settings
-PROJECT := mctweetface
-PACKAGE := mctweetface
+PROJECT := mctweetyface
+PACKAGE := mctweetyface
 SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
 
 # Python settings
@@ -244,7 +244,7 @@ test-unit: depends-ci
 	@- mv $(FAILURES).bak $(FAILURES)
 ifndef TRAVIS
 ifndef APPVEYOR
-	$(COVERAGE_SPACE) jacebrowning/mctweetface unit
+	$(COVERAGE_SPACE) jacebrowning/mctweetyface unit
 endif
 endif
 
@@ -254,7 +254,7 @@ test-int: depends-ci
 	$(PYTEST) $(PYTEST_OPTS) tests
 ifndef TRAVIS
 ifndef APPVEYOR
-	$(COVERAGE_SPACE) jacebrowning/mctweetface integration
+	$(COVERAGE_SPACE) jacebrowning/mctweetyface integration
 endif
 endif
 
@@ -265,7 +265,7 @@ test-all: depends-ci
 	$(PYTEST) $(PYTEST_OPTS) $(PACKAGE) tests
 ifndef TRAVIS
 ifndef APPVEYOR
-	$(COVERAGE_SPACE) jacebrowning/mctweetface overall
+	$(COVERAGE_SPACE) jacebrowning/mctweetyface overall
 endif
 endif
 

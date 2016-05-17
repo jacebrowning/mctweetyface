@@ -3,8 +3,8 @@
 import pytest
 import webtest
 
-from mctweetface.test.conftest import pytest_configure  # pylint: disable=unused-import
-from mctweetface import views
+from mctweetyface.test.conftest import pytest_configure  # pylint: disable=unused-import
+from mctweetyface import views
 
 
 @pytest.fixture

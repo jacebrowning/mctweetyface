@@ -4,7 +4,7 @@
 
 import os
 
-from mctweetface.views import app
+from mctweetyface.views import app
 
 
 if __name__ == '__main__':

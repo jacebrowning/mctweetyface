@@ -1,8 +1,8 @@
-"""Package for mctweetface."""
+"""Package for mctweetyface."""
 
 import sys
 
-__project__ = 'mctweetface'
+__project__ = 'mctweetyface'
 __version__ = '0.0.0'
 
 VERSION = "{0} v{1}".format(__project__, __version__)

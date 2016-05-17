@@ -2,7 +2,7 @@
 
 from expecter import expect
 
-from mctweetface import views
+from mctweetyface import views
 
 
 def describe_index():

@@ -13,7 +13,7 @@ else:
     notify = Notifier.notify
 
 
-watch_paths = ["mctweetface", "tests"]
+watch_paths = ["mctweetyface", "tests"]
 
 
 @select_runnable('python')

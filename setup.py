@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-"""Setup script for mctweetface."""
+"""Setup script for mctweetyface."""
 
 import setuptools
 
-from mctweetface import __project__, __version__
+from mctweetyface import __project__, __version__
 
 try:
     README = open("README.rst").read()
@@ -19,7 +19,7 @@ setuptools.setup(
     version=__version__,
 
     description="Naming things is hard.",
-    url='https://github.com/jacebrowning/mctweetface',
+    url='https://github.com/jacebrowning/mctweetyface',
     author='Jace Browning',
     author_email='jacebrowning@gmail.com',
 
