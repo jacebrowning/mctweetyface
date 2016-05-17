@@ -6,12 +6,14 @@ Unix: [![Unix Build Status](http://img.shields.io/travis/jacebrowning/mctweetyfa
 
 ## Usage
 
-See the list of names:
-
-https://twitter.com/mctweetyface
-
-or generate a new one:
+Generate a new random name:
 
 ```
 curl http://mctweetyface.herokuapp.com
+```
+
+or specify a custom root:
+
+```
+curl http://mctweetyface.herokuapp.com?name=foobar
 ```
