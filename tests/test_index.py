@@ -12,3 +12,9 @@ def describe_index():
 
             expect(response.status_code) == 200
             expect(response.text).contains("face")
+
+        def it_returns_given_name(client):
+            response = client.get("/?name=toast")
+
+            expect(response.status_code) == 200
+            expect(response.text).contains("Toasty McToastface")

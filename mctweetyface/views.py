@@ -12,8 +12,9 @@ log = logging.getLogger(__name__)
 
 @bottle.get("/")
 def index():
-    """Return a random name."""
-    name = models.get_random_name()
+    """Return a name."""
+    target = bottle.request.query.get('name')
+    name = models.get_name(target)
 
     if bottle.request.query.get('update'):
         utils.tweet(name)

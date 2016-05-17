@@ -15,12 +15,13 @@ def get_random_noun():
     return random.choice(_NOUNS)
 
 
-def get_random_name():
-    """Generate a name from a random noun."""
-    noun = None
+def get_name(target=None):
+    """Generate a name from a given target, or use a random noun."""
+    noun = target
 
-    while any(_rejected(noun)):
-        noun = get_random_noun()
+    if not target:
+        while any(_rejected(noun)):
+            noun = get_random_noun()
 
     return "{0}y Mc{0}face".format(noun.capitalize())
 
