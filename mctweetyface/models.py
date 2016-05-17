@@ -28,6 +28,7 @@ def get_random_name():
 def _rejected(noun):
     yield not noun
     yield noun.endswith('y')
+    yield noun.endswith('ing')
     yield ' ' in noun
     yield '-' in noun
     yield len(noun) > 8
