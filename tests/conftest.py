@@ -11,4 +11,5 @@ from mctweetyface import views
 def client(tmpdir):
     """Test client for the API."""
     tmpdir.chdir()
+    views.app.catchall = False
     return webtest.TestApp(views.app)

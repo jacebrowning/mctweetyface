@@ -13,8 +13,9 @@ log = logging.getLogger(__name__)
 @bottle.get("/")
 def index():
     """Return a name."""
-    target = bottle.request.query.get('name')
-    name = models.get_name(target)
+    word = bottle.request.query.get('name')
+
+    name = models.get_name(word)
 
     utils.tweet(name, token=bottle.request.headers.get('Authorization'))
 
