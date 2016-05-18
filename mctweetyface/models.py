@@ -31,10 +31,10 @@ def get_name(word=None):
     return "{0}y Mc{0}face".format(word.capitalize())
 
 
-def _rejected(noun):
-    yield not noun
-    yield noun.endswith('y')
-    yield noun.endswith('ing')
-    yield ' ' in noun
-    yield '-' in noun
-    yield len(noun) > 8
+def _rejected(word):
+    yield not word
+    yield word.endswith('y')
+    yield word.endswith('ing')
+    yield ' ' in word
+    yield '-' in word
+    yield len(word) > 8

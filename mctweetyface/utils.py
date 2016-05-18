@@ -20,11 +20,11 @@ api = tweepy.API(auth)
 def tweet(message, token=None):
     """Post a message on Twitter using the loaded credentials."""
     if not auth.access_token:
-        log.warning("Tweeting disabled")
+        log.warning("Twitter access token not provided")
         return
 
     if token != auth.access_token:
-        log.error("Invalid access token")
+        log.error("Twitter access token is invalid")
         return
 
     api.update_status(status=message)
