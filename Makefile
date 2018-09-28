@@ -65,7 +65,7 @@ PYREVERSE := $(BIN_)pyreverse
 NOSE := $(BIN_)nosetests
 PYTEST := $(BIN_)py.test
 COVERAGE := $(BIN_)coverage
-COVERAGE_SPACE := $(BIN_)coverage.space
+COVERAGE_SPACE := $(BIN_)coveragespace
 SNIFFER := $(BIN_)sniffer
 HONCHO := $(ACTIVATE) && $(BIN_)honcho
 
@@ -131,7 +131,7 @@ depends: depends-ci depends-doc depends-dev
 .PHONY: depends-ci
 depends-ci: env Makefile $(DEPENDS_CI_FLAG)
 $(DEPENDS_CI_FLAG): Makefile
-	$(PIP) install --upgrade pep8 pep257 pylint coverage coverage.space pytest pytest-describe pytest-expecter pytest-cov pytest-random
+	$(PIP) install --upgrade pep8 pep257 pylint coverage coveragespace pytest pytest-describe pytest-expecter pytest-cov pytest-random
 	@ touch $@  # flag to indicate dependencies are installed
 
 .PHONY: depends-doc

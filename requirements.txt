@@ -6,4 +6,4 @@ tweepy == 3.5.0
 webtest == 2.0.20
 
 # Deployment
-gunicorn == 19.4.5
+gunicorn == 19.5.0
