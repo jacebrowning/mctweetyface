@@ -7,7 +7,7 @@ SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
 ifndef TRAVIS
 ifndef APPVEYOR
 	PYTHON_MAJOR ?= 3
-	PYTHON_MINOR ?= 5
+	PYTHON_MINOR ?= 6
 endif
 endif
 
@@ -131,7 +131,7 @@ depends: depends-ci depends-doc depends-dev
 .PHONY: depends-ci
 depends-ci: env Makefile $(DEPENDS_CI_FLAG)
 $(DEPENDS_CI_FLAG): Makefile
-	$(PIP) install --upgrade pep8 pep257 pylint coverage coveragespace pytest pytest-describe pytest-expecter pytest-cov pytest-random
+	$(PIP) install --upgrade pep8 pep257 pylint coverage coveragespace "pytest<4" pytest-describe pytest-expecter pytest-cov pytest-random
 	@ touch $@  # flag to indicate dependencies are installed
 
 .PHONY: depends-doc
