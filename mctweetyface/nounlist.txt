@@ -374,7 +374,6 @@ birth
 birthday
 bit
 bite
-black
 blackberry
 blackboard
 blackfish
@@ -498,7 +497,6 @@ broom
 brother
 brother-in-law
 brow
-brown
 brush
 brushfire
 brushing
@@ -4212,7 +4210,6 @@ whirlwind
 whisker
 whiskey
 whistle
-white
 whole
 wholesale
 wholesaler
