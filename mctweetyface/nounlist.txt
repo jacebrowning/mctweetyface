@@ -2410,7 +2410,6 @@ mime
 mimosa
 mind
 mine
-mini
 minibus
 minion
 mini-skirt
@@ -2550,7 +2549,6 @@ nicety
 niche
 nickel
 niece
-nigeria
 night
 nightclub
 nightgown
@@ -2592,7 +2590,6 @@ oak
 oar
 oasis
 oatmeal
-obi
 objective
 obligation
 oboe
@@ -2756,7 +2753,6 @@ patch
 path
 patient
 patina
-patio
 patriarch
 patricia
 patrimony
@@ -2875,7 +2871,6 @@ piss
 pitch
 pitching
 pith
-pizza
 place
 plain
 plane
@@ -3301,7 +3296,6 @@ scanner
 scarecrow
 scarf
 scarification
-scene
 scent
 schedule
 scheme
