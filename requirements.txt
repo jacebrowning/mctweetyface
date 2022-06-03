@@ -1,5 +1,5 @@
 # Application
-bottle == 0.12.19
+bottle == 0.12.20
 tweepy == 3.5.0
 
 # Testing
