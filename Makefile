@@ -7,7 +7,7 @@ SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
 ifndef TRAVIS
 ifndef APPVEYOR
 	PYTHON_MAJOR ?= 3
-	PYTHON_MINOR ?= 6
+	PYTHON_MINOR ?= 9
 endif
 endif
 
@@ -122,7 +122,6 @@ $(PIP):
 	$(SYS_PYTHON) -m venv --clear $(ENV)
 	$(PYTHON) -m pip install --upgrade pip setuptools
 
-
 # Tools Installation ###########################################################
 
 .PHONY: depends
@@ -131,7 +130,7 @@ depends: depends-ci depends-doc depends-dev
 .PHONY: depends-ci
 depends-ci: env Makefile $(DEPENDS_CI_FLAG)
 $(DEPENDS_CI_FLAG): Makefile
-	$(PIP) install --upgrade pep8 pep257 pylint coverage coveragespace "pytest<4" pytest-describe pytest-expecter pytest-cov pytest-random
+	$(PIP) install --upgrade pep8 pep257 pylint coverage coveragespace pytest pytest-describe pytest-expecter pytest-cov pytest-random
 	@ touch $@  # flag to indicate dependencies are installed
 
 .PHONY: depends-doc
@@ -244,7 +243,7 @@ test-unit: depends-ci
 	@- mv $(FAILURES).bak $(FAILURES)
 ifndef TRAVIS
 ifndef APPVEYOR
-	$(COVERAGE_SPACE) jacebrowning/mctweetyface unit
+	$(COVERAGE_SPACE) update unit
 endif
 endif
 
@@ -254,7 +253,7 @@ test-int: depends-ci
 	$(PYTEST) $(PYTEST_OPTS) tests
 ifndef TRAVIS
 ifndef APPVEYOR
-	$(COVERAGE_SPACE) jacebrowning/mctweetyface integration
+	$(COVERAGE_SPACE) update integration
 endif
 endif
 
@@ -265,7 +264,7 @@ test-all: depends-ci
 	$(PYTEST) $(PYTEST_OPTS) $(PACKAGE) tests
 ifndef TRAVIS
 ifndef APPVEYOR
-	$(COVERAGE_SPACE) jacebrowning/mctweetyface overall
+	$(COVERAGE_SPACE) update overall
 endif
 endif
 

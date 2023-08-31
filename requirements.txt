@@ -1,6 +1,6 @@
 # Application
 bottle == 0.12.19
-tweepy == 3.5.0
+tweepy == 3.10.0
 
 # Testing
 webtest == 2.0.20
