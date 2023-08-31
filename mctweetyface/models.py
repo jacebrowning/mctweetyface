@@ -13,7 +13,9 @@ def get_random_word():
     global _NOUNS
 
     if not _NOUNS:
-        with Path(__file__).parent.joinpath("nounlist.txt").open() as f:
+        with (Path(__file__)
+              .parent.joinpath("nounlist.txt")
+              .open(encoding='utf-8')) as f:
             _NOUNS = f.read().splitlines()
 
     return random.choice(_NOUNS)

@@ -1,4 +1,4 @@
-# pylint: disable=unused-variable,expression-not-assigned
+# pylint: disable=unused-variable,expression-not-assigned,use-implicit-booleaness-not-comparison
 
 from unittest.mock import patch, call
 
